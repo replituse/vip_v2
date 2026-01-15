@@ -45,7 +45,7 @@ export default function Services() {
   }
 
   return (
-    <div className="min-h-screen bg-white py-24 px-6 md:px-12">
+    <div className="min-h-screen bg-[#0f172a] py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div 
@@ -53,7 +53,7 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16 md:mb-24 text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6 uppercase inline-block border-b-2 border-primary pb-2">
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 uppercase inline-block border-b-2 border-primary pb-2">
             Our Services
           </h1>
         </motion.div>
@@ -69,19 +69,19 @@ export default function Services() {
             <Link key={service.id} href={`/services/${service.id}`}>
               <motion.div 
                 variants={item}
-                className="group relative h-full bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden flex flex-col items-center text-center"
+                className="group relative h-full bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-primary/50 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col items-center text-center shadow-xl"
               >
                 <div className="relative z-10 flex flex-col items-center h-full">
                   {/* Icon */}
-                  <div className="w-24 h-24 rounded-full bg-gray-50 flex items-center justify-center mb-6 border border-gray-100 group-hover:bg-primary/5 transition-colors">
+                  <div className="w-24 h-24 rounded-full bg-[#0f172a]/50 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-primary/10 transition-colors">
                     <ServiceIcon iconName={service.icon} className="w-12 h-12 text-primary" />
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-2xl font-display font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors uppercase">
+                  <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-primary transition-colors uppercase">
                     {service.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
                     {service.description}
                   </p>
                   

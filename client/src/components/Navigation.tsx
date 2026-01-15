@@ -28,18 +28,18 @@ export function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 p-4 flex items-center justify-between bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 p-4 flex items-center justify-between bg-[#0f172a]/80 backdrop-blur-md border-b border-white/5 shadow-sm">
         <div className="w-10">
           {isCatalogPage && (
             <Link href="/" className="p-2 flex items-center justify-center hover:scale-110 transition-transform pointer-events-auto">
-              <ArrowLeft className="w-5 h-5 text-gray-900" />
+              <ArrowLeft className="w-5 h-5 text-white" />
             </Link>
           )}
         </div>
 
         <Link href="/" className="pointer-events-auto">
           <div className="flex flex-col px-4 py-2">
-            <span className="text-xl md:text-2xl font-display font-bold text-gray-900 tracking-wide uppercase">
+            <span className="text-xl md:text-2xl font-display font-bold text-white tracking-wide uppercase">
               VIP <span className="text-primary">NETWORKS</span>
             </span>
           </div>
@@ -48,7 +48,7 @@ export function Navigation() {
         <div className="w-10 flex justify-end">
           <button 
             onClick={toggleMenu}
-            className="pointer-events-auto p-2 text-gray-900 hover:scale-110 active:scale-95 transition-transform"
+            className="pointer-events-auto p-2 text-white hover:scale-110 active:scale-95 transition-transform"
           >
             <Menu className="w-6 h-6" />
           </button>
