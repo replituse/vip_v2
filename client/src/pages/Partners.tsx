@@ -62,13 +62,7 @@ export default function Partners() {
   return (
     <div className="min-h-screen bg-[#0f172a] py-24 px-6 flex flex-col items-center">
       <div className="max-w-7xl w-full mx-auto">
-        <div className="mb-12 flex items-center gap-4">
-          <button 
-            onClick={handleBack}
-            className="p-2 bg-white/5 rounded-full text-white hover:bg-white/10 transition-colors"
-          >
-            <ArrowLeft className="w-6 h-6" />
-          </button>
+        <div className="mb-12 flex items-center justify-center">
           <h1 className="text-3xl md:text-5xl font-display font-bold text-white border-b-2 border-primary pb-2 uppercase tracking-wide">
             Our Trustable Brands
           </h1>
@@ -86,9 +80,12 @@ export default function Partners() {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-w-full max-h-full object-contain group-hover:grayscale-0 transition-all"
+                className="max-w-full max-h-full object-contain transition-all"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${partner.name}&background=random`;
+                  const target = e.target as HTMLImageElement;
+                  if (!target.src.includes('ui-avatars')) {
+                    target.src = `https://ui-avatars.com/api/?name=${partner.name}&background=f8fafc&color=0f172a&bold=true&size=128`;
+                  }
                 }}
               />
             </motion.div>
