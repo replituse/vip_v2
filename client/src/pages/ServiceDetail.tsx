@@ -62,25 +62,12 @@ export default function ServiceDetail() {
     <div className="min-h-screen bg-[#0f172a] text-foreground">
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Panel - Visual/Hero */}
-        <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-[#1e293b] overflow-hidden flex items-center justify-center p-12">
+        <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-[#1e293b] overflow-hidden flex items-center justify-center">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-40 grayscale-[0.5]" 
+            className="absolute inset-0 bg-cover bg-center" 
             style={{ backgroundImage: `url(${displayImage})` }}
           />
-          {/* Decorative Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e293b]/80 via-transparent to-[#1e293b]/80" />
-          
-          <motion.div 
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="relative z-10"
-          >
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl bg-[#0f172a]/50 backdrop-blur-xl border border-white/10 flex items-center justify-center shadow-2xl shadow-black/50 overflow-hidden">
-               <img src={displayImage} alt={service.title} className="w-full h-full object-cover opacity-80" />
-            </div>
-          </motion.div>
         </div>
 
         {/* Right Panel - Content */}
