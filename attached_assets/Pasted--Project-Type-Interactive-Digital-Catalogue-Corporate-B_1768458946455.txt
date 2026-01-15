@@ -1,0 +1,189 @@
+📌 Project Type
+
+Interactive Digital Catalogue / Corporate Brochure (NOT a website)
+Mobile-first, touch-friendly, premium design
+
+🎯 Objective
+
+Create a unique, attractive, modern digital catalogue for VIP Networks, using content from the uploaded FIN VIP BROCHURE PDF, and following the UI/UX flow style shown in the reference images (home → explore → categories → hamburger menu).
+
+This should feel like a digital brochure or catalogue, not a traditional website.
+
+🧭 Overall Flow (Very Important)
+
+Home / Cover Screen
+
+Explore Services (Catalogue Inside Pages)
+
+Category-wise Services View
+
+Hamburger Menu (Mobile Slide-in Catalogue Menu)
+
+🟢 1️⃣ HOME / COVER SCREEN (Like Image 1 – Reference Only)
+
+Full-screen hero cover
+
+Company logo (as shown in PDF)
+
+Tagline: “Where Technology Meets Reliability”
+
+Short intro text (from brochure)
+
+One main CTA button:
+“Explore Services”
+
+Smooth fade / slide animation
+
+Dark + premium IT-tech background
+
+Looks like the front page of a brochure
+
+👉 Clicking Explore Services scrolls or transitions into catalogue pages (no page reload).
+
+🟢 2️⃣ SERVICES OVERVIEW (Like Image 2 – Reference Only)
+
+Display services as catalogue cards, not website sections.
+
+Each card shows:
+
+Service icon / illustration (tech-related)
+
+Service name
+
+Short description line
+
+Use these categories (from PDF):
+
+CCTV Surveillance & Networking
+
+Thermal & Fire Detection Systems
+
+Intercom & IPBX Communication
+
+Biometrics & Smart Access Locks
+
+Public Addressable (PA)
+
+Audio Visual & Room Automation
+
+Projector & Display Solutions
+
+Printers / Desktop / Laptop
+
+UPS & Battery Solutions
+
+IoT / Cloud / Software Solutions
+
+Network Booster
+
+Cards should feel like catalogue tiles, not clickable buttons.
+
+🟢 3️⃣ SERVICE DETAIL VIEW (Inside Catalogue)
+
+When a service is tapped:
+
+Open a clean inner catalogue section
+
+Show:
+
+Service title
+
+Description text from the PDF
+
+Bullet points exactly as per brochure
+
+Related illustrative images (tech visuals if original missing)
+
+Smooth transitions
+
+Plenty of white/spacing like a brochure page
+
+No forms, no pricing, no enquiry buttons
+
+🟢 4️⃣ HAMBURGER MENU (Like Image 3 – Reference Only)
+
+Hamburger icon visible in mobile view
+
+On click → slide-in catalogue menu
+
+Menu shows:
+
+All service categories (icons + text)
+
+Contact info at bottom
+
+Social icons (optional)
+
+This menu should feel like a catalogue index, not website navigation
+
+🎨 DESIGN & BRANDING RULES
+
+Use logo colors from the PDF
+
+One primary brand color + dark / neutral shades
+
+Fonts: modern & corporate (Inter / Poppins / Montserrat)
+
+Rounded cards, soft shadows
+
+Minimal animations (fade, slide, reveal)
+
+Clean spacing like a printed brochure
+
+Elegant, premium, corporate IT feel
+
+📱 MOBILE FIRST (STRICT)
+
+Mobile-first layout
+
+Hamburger menu only on mobile
+
+Touch-friendly spacing
+
+No horizontal scrolling
+
+Perfect readability without zoom
+
+Tablet & desktop should scale naturally
+
+⚙️ TECHNICAL RULES (STRICT)
+
+Use HTML + CSS + minimal JavaScript
+
+Single-page flowing catalogue (no routing)
+
+No backend, no database
+
+No CMS
+
+Optimized performance
+
+Clean, commented code
+
+Flexbox / CSS Grid preferred
+
+❌ DO NOT DO
+
+❌ Do NOT make it a traditional website
+
+❌ Do NOT add pricing, forms, login, or enquiry buttons
+
+❌ Do NOT copy jewellery content
+
+❌ Do NOT change brochure content meaning
+
+❌ Do NOT overload animations
+
+✅ FINAL EXPECTATION
+
+A premium digital catalogue / brochure that:
+
+Looks like a modern corporate brochure
+
+Works perfectly on mobile
+
+Uses FIN VIP brochure content
+
+Follows reference images only for layout & flow
+
+Is unique, attractive, and professional
