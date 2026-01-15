@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, Instagram, Youtube, MessageCircle } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
+import { SiInstagram, SiWhatsapp, SiLinkedin } from "react-icons/si";
 import networkingVideo from '@assets/generated_videos/networking_technology_background_video.mp4';
 
 export default function Home() {
@@ -68,7 +69,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-8">
             <Link href="/services">
               <button className="group px-12 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all flex items-center gap-3">
-                Explore Catalog
+                Explore Services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
@@ -76,13 +77,13 @@ export default function Home() {
             {/* Social Icons */}
             <div className="flex gap-6 mt-4">
               <a href="https://www.instagram.com/vip_networks/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
-                <Instagram size={24} />
+                <SiInstagram size={24} />
               </a>
               <a href="https://wa.me/919326144739" target="_blank" rel="noopener noreferrer" className="p-3 bg-green-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
-                <MessageCircle size={24} />
+                <SiWhatsapp size={24} />
               </a>
-              <a href="https://youtube.com/@vipnetworks" target="_blank" rel="noopener noreferrer" className="p-3 bg-red-600 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
-                <Youtube size={24} />
+              <a href="https://linkedin.com/company/vipnetworks" target="_blank" rel="noopener noreferrer" className="p-3 bg-blue-600 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+                <SiLinkedin size={24} />
               </a>
             </div>
 
