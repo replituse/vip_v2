@@ -70,8 +70,9 @@ export default function Home() {
           </div>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed font-light tracking-wide">
-            Discover Timeless Elegance and Exquisite Craftsmanship in Networking Infrastructure
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed font-light tracking-wide italic">
+            VISIONARY | INNOVATIVE | PRODUCTIVITY<br />
+            "Where Technology Meet Reliability"
           </p>
 
           {/* CTA Button */}
@@ -120,19 +121,19 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="mt-4 flex flex-col items-center gap-3 text-gray-300 text-sm md:text-base"
+              className="mt-2 flex flex-col items-center gap-3 text-gray-300 text-sm md:text-base"
             >
-              <div className="flex items-start justify-center gap-3 max-w-xs text-center">
-                <MapPin size={18} className="text-primary mt-1 shrink-0" />
-                <span>Jogeshwari East, Mumbai - 400060, Maharashtra.</span>
+              <div className="flex items-center gap-2">
+                <Mail size={18} className="text-primary shrink-0" />
+                <a href="mailto:vip.itinfra@gmail.com" className="hover:text-primary transition-colors">vip.itinfra@gmail.com</a>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <Phone size={18} className="text-primary shrink-0" />
                 <a href="tel:+919326144739" className="hover:text-primary transition-colors">+91 9326144739</a>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-primary shrink-0" />
-                <a href="mailto:vip.itinfra@gmail.com" className="hover:text-primary transition-colors">vip.itinfra@gmail.com</a>
+              <div className="flex items-center gap-2 max-w-xs text-center">
+                <MapPin size={18} className="text-primary shrink-0" />
+                <span>Jogeshwari East, Mumbai - 400060, Maharashtra.</span>
               </div>
             </motion.div>
           </div>
