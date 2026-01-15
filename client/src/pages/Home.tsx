@@ -75,7 +75,7 @@ export default function Home() {
           </p>
 
           {/* CTA Button */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-6">
             <Link href="/services">
               <button className="group px-12 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all flex items-center gap-3">
                 Explore Services
@@ -84,7 +84,7 @@ export default function Home() {
             </Link>
 
             {/* Social Icons */}
-            <div className="flex gap-6 mt-2">
+            <div className="flex gap-6 mt-4">
               <a href="https://www.instagram.com/vip_networks/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
                 <SiInstagram size={24} />
               </a>
@@ -120,18 +120,18 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="mt-8 flex flex-col items-center gap-4 text-gray-300 text-sm md:text-base"
+              className="mt-4 flex flex-col items-center gap-3 text-gray-300 text-sm md:text-base"
             >
-              <div className="flex items-center gap-2">
-                <MapPin size={18} className="text-primary" />
+              <div className="flex items-start justify-center gap-3 max-w-xs text-center">
+                <MapPin size={18} className="text-primary mt-1 shrink-0" />
                 <span>Jogeshwari East, Mumbai - 400060, Maharashtra.</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={18} className="text-primary" />
+              <div className="flex items-center gap-3">
+                <Phone size={18} className="text-primary shrink-0" />
                 <a href="tel:+919326144739" className="hover:text-primary transition-colors">+91 9326144739</a>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail size={18} className="text-primary" />
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-primary shrink-0" />
                 <a href="mailto:vip.itinfra@gmail.com" className="hover:text-primary transition-colors">vip.itinfra@gmail.com</a>
               </div>
             </motion.div>
