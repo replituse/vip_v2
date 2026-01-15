@@ -28,28 +28,31 @@ export function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center">
-        <div className="flex items-center gap-4">
+      <header className="fixed top-0 left-0 right-0 z-50 p-4 flex items-center justify-between bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div className="w-10">
           {isCatalogPage && (
-            <Link href="/" className="p-2 bg-white/80 backdrop-blur-md rounded-full shadow-md hover:scale-110 transition-transform pointer-events-auto">
+            <Link href="/" className="p-2 flex items-center justify-center hover:scale-110 transition-transform pointer-events-auto">
               <ArrowLeft className="w-5 h-5 text-gray-900" />
             </Link>
           )}
-          <Link href="/" className="pointer-events-auto">
-            <div className="flex flex-col bg-white/80 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-100 shadow-lg">
-              <span className="text-xl font-display font-bold text-gray-900 tracking-wide">
-                VIP <span className="text-primary">NETWORKS</span>
-              </span>
-            </div>
-          </Link>
         </div>
 
-        <button 
-          onClick={toggleMenu}
-          className="pointer-events-auto p-3 bg-white text-gray-900 rounded-full shadow-lg border border-gray-100 hover:scale-110 active:scale-95 transition-transform"
-        >
-          <Menu className="w-6 h-6" />
-        </button>
+        <Link href="/" className="pointer-events-auto">
+          <div className="flex flex-col px-4 py-2">
+            <span className="text-xl md:text-2xl font-display font-bold text-gray-900 tracking-wide uppercase">
+              VIP <span className="text-primary">NETWORKS</span>
+            </span>
+          </div>
+        </Link>
+
+        <div className="w-10 flex justify-end">
+          <button 
+            onClick={toggleMenu}
+            className="pointer-events-auto p-2 text-gray-900 hover:scale-110 active:scale-95 transition-transform"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
       </header>
 
       {/* Full Screen Drawer */}
