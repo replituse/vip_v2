@@ -51,16 +51,25 @@ const partners = [
 ];
 
 export default function Partners() {
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = "/";
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#0f172a] py-24 px-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-[#0f172a] py-24 px-6 flex flex-col items-center">
+      <div className="max-w-7xl w-full mx-auto">
         <div className="mb-12 flex items-center gap-4">
-          <Link href="/">
-            <button className="p-2 bg-white/5 rounded-full text-white hover:bg-white/10 transition-colors">
-              <ArrowLeft className="w-6 h-6" />
-            </button>
-          </Link>
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-white border-b-2 border-primary pb-2">
+          <button 
+            onClick={handleBack}
+            className="p-2 bg-white/5 rounded-full text-white hover:bg-white/10 transition-colors"
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </button>
+          <h1 className="text-3xl md:text-5xl font-display font-bold text-white border-b-2 border-primary pb-2 uppercase tracking-wide">
             Our Trustable Brands
           </h1>
         </div>

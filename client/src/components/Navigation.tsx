@@ -40,14 +40,12 @@ export function Navigation() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 p-4 flex items-center justify-between bg-[#0f172a]/80 backdrop-blur-md border-b border-white/5 shadow-sm">
         <div className="w-10">
-          {isCatalogPage && (
-            <button 
-              onClick={handleBack}
-              className="p-2 flex items-center justify-center hover:scale-110 transition-transform pointer-events-auto text-white"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-          )}
+          <button 
+            onClick={handleBack}
+            className="p-2 flex items-center justify-center hover:scale-110 transition-transform pointer-events-auto text-white"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
         </div>
 
         <Link href="/" className="pointer-events-auto">
