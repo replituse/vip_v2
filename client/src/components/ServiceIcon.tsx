@@ -11,7 +11,14 @@ import {
   Activity,
   Zap,
   Radio,
-  Fingerprint
+  Fingerprint,
+  Phone,
+  Megaphone,
+  MonitorPlay,
+  Projector,
+  Printer,
+  BatteryCharging,
+  Cloud
 } from "lucide-react";
 
 interface ServiceIconProps {
@@ -23,17 +30,24 @@ export function ServiceIcon({ iconName, className = "w-6 h-6" }: ServiceIconProp
   // Map backend strings to Lucide components
   const icons: Record<string, React.ElementType> = {
     "cctv": Video,
-    "fire": Flame,
-    "access": Lock,
-    "network": Server,
+    "flame": Flame,
+    "lock": Lock,
+    "server": Server,
     "wifi": Wifi,
-    "security": Shield,
-    "infrastructure": HardDrive,
-    "internet": Globe,
-    "biometric": Fingerprint,
-    "power": Zap,
-    "wireless": Radio,
-    "monitoring": Activity,
+    "shield": Shield,
+    "harddrive": HardDrive,
+    "globe": Globe,
+    "fingerprint": Fingerprint,
+    "zap": Zap,
+    "radio": Radio,
+    "activity": Activity,
+    "phone": Phone,
+    "megaphone": Megaphone,
+    "monitor-play": MonitorPlay,
+    "projector": Projector,
+    "printer": Printer,
+    "battery-charging": BatteryCharging,
+    "cloud": Cloud,
     // Fallback
     "default": Cpu
   };
