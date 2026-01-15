@@ -4,6 +4,27 @@ import { useServices } from "@/hooks/use-services";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { ArrowRight, Loader2 } from "lucide-react";
 
+// Import generated images
+import cctvImg from '@assets/generated_images/modern_cctv_security_cameras_setup.png';
+import thermalImg from '@assets/generated_images/thermal_and_fire_detection_system.png';
+import networkingImg from '@assets/generated_images/modern_server_room_networking_equipment.png';
+import wifiImg from '@assets/generated_images/wireless_access_point_networking_device.png';
+import defaultImg from '@assets/stock_images/it_infrastructure_an_c2bc155e.jpg';
+
+const serviceImages: Record<number, string> = {
+  1: cctvImg,
+  2: thermalImg,
+  3: networkingImg,
+  4: defaultImg,
+  5: networkingImg,
+  6: defaultImg,
+  7: defaultImg,
+  8: defaultImg,
+  9: defaultImg,
+  10: networkingImg,
+  11: wifiImg,
+};
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -65,34 +86,40 @@ export default function Services() {
           animate="show"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
-          {services?.map((service) => (
-            <Link key={service.id} href={`/services/${service.id}`}>
-              <motion.div 
-                variants={item}
-                className="group relative h-full bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-primary/50 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col items-center text-center shadow-xl"
-              >
-                <div className="relative z-10 flex flex-col items-center h-full">
-                  {/* Icon */}
-                  <div className="w-24 h-24 rounded-full bg-[#0f172a]/50 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-primary/10 transition-colors">
-                    <ServiceIcon iconName={service.icon} className="w-12 h-12 text-primary" />
+          {services?.map((service) => {
+            const displayImage = serviceImages[service.id] || defaultImg;
+            return (
+              <Link key={service.id} href={`/services/${service.id}`}>
+                <motion.div 
+                  variants={item}
+                  className="group relative h-full bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-primary/50 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col items-center text-center shadow-xl"
+                >
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <img src={displayImage} alt="" className="w-full h-full object-cover grayscale" />
                   </div>
-                  
-                  {/* Content */}
-                  <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-primary transition-colors uppercase">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {service.description}
-                  </p>
-                  
-                  <div className="mt-auto flex items-center gap-2 text-sm font-bold text-primary">
-                    View Details
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <div className="relative z-10 flex flex-col items-center h-full">
+                    {/* Icon */}
+                    <div className="w-24 h-24 rounded-full bg-[#0f172a]/80 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-primary/10 transition-colors">
+                      <ServiceIcon iconName={service.icon} className="w-12 h-12 text-primary" />
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-primary transition-colors uppercase">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                      {service.description}
+                    </p>
+                    
+                    <div className="mt-auto flex items-center gap-2 text-sm font-bold text-primary">
+                      View Details
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </Link>
-          ))}
+                </motion.div>
+              </Link>
+            );
+          })}
         </motion.div>
       </div>
     </div>

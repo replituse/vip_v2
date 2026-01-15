@@ -4,6 +4,27 @@ import { motion } from "framer-motion";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { ArrowLeft, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 
+// Import generated images
+import cctvImg from '@assets/generated_images/modern_cctv_security_cameras_setup.png';
+import thermalImg from '@assets/generated_images/thermal_and_fire_detection_system.png';
+import networkingImg from '@assets/generated_images/modern_server_room_networking_equipment.png';
+import wifiImg from '@assets/generated_images/wireless_access_point_networking_device.png';
+import defaultImg from '@assets/stock_images/it_infrastructure_an_c2bc155e.jpg';
+
+const serviceImages: Record<number, string> = {
+  1: cctvImg,
+  2: thermalImg,
+  3: networkingImg, // Intercom & IPBX
+  4: defaultImg,    // Biometrics
+  5: networkingImg, // PA
+  6: defaultImg,    // AV
+  7: defaultImg,    // Projector
+  8: defaultImg,    // Printers
+  9: defaultImg,    // UPS
+  10: networkingImg, // IoT
+  11: wifiImg,       // Network Booster
+};
+
 export default function ServiceDetail() {
   const [, params] = useRoute("/services/:id");
   const id = params ? parseInt(params.id) : 0;
@@ -27,6 +48,8 @@ export default function ServiceDetail() {
     );
   }
 
+  const displayImage = serviceImages[service.id] || defaultImg;
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-foreground">
       {/* Back Navigation */}
@@ -42,9 +65,13 @@ export default function ServiceDetail() {
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Panel - Visual/Hero */}
         <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-[#1e293b] overflow-hidden flex items-center justify-center p-12">
-          {/* Decorative Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-[#1e293b] to-[#1e293b] opacity-50" />
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "30px 30px" }}></div>
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-40 grayscale-[0.5]" 
+            style={{ backgroundImage: `url(${displayImage})` }}
+          />
+          {/* Decorative Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1e293b]/80 via-transparent to-[#1e293b]/80" />
           
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
@@ -52,8 +79,8 @@ export default function ServiceDetail() {
             transition={{ duration: 0.6 }}
             className="relative z-10"
           >
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl bg-[#0f172a]/50 backdrop-blur-xl border border-white/10 flex items-center justify-center shadow-2xl shadow-black/50">
-              <ServiceIcon iconName={service.icon} className="w-24 h-24 md:w-32 md:h-32 text-primary drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl bg-[#0f172a]/50 backdrop-blur-xl border border-white/10 flex items-center justify-center shadow-2xl shadow-black/50 overflow-hidden">
+               <img src={displayImage} alt={service.title} className="w-full h-full object-cover opacity-80" />
             </div>
           </motion.div>
         </div>
