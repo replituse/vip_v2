@@ -131,7 +131,7 @@ export default function Home() {
                 <Phone size={18} className="text-primary shrink-0" />
                 <a href="tel:+919326144739" className="hover:text-primary transition-colors">+91 9326144739</a>
               </div>
-              <div className="flex items-center gap-2 max-w-xs text-center">
+              <div className="flex items-center justify-center gap-2 max-w-xs text-center">
                 <MapPin size={18} className="text-primary shrink-0" />
                 <span>Jogeshwari East, Mumbai - 400060, Maharashtra.</span>
               </div>
