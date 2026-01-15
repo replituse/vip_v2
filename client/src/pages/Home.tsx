@@ -1,8 +1,9 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, MapPin, Phone, Mail } from "lucide-react";
 import { SiInstagram, SiWhatsapp, SiLinkedin } from "react-icons/si";
 import networkingVideo from '@assets/generated_videos/networking_technology_background_video.mp4';
+import logoImg from '@assets/image_1768470734906.png';
 
 export default function Home() {
   return (
@@ -53,7 +54,15 @@ export default function Home() {
           className="max-w-4xl mx-auto"
         >
           {/* Logo/Title */}
-          <div className="mb-4">
+          <div className="mb-4 flex flex-col items-center">
+            <motion.img 
+              src={logoImg} 
+              alt="VIP Networks Logo" 
+              className="w-24 h-24 mb-6 drop-shadow-2xl"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            />
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-2 uppercase tracking-wider">
               VIP <span className="text-primary">NETWORKS</span>
             </h1>
@@ -105,6 +114,27 @@ export default function Home() {
               </div>
               <p className="text-gray-500 text-xs mt-3">Click to leave a Google review</p>
             </div>
+
+            {/* Contact Details */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="mt-8 flex flex-col items-center gap-4 text-gray-300 text-sm md:text-base"
+            >
+              <div className="flex items-center gap-2">
+                <MapPin size={18} className="text-primary" />
+                <span>Jogeshwari East, Mumbai - 400060, Maharashtra.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={18} className="text-primary" />
+                <a href="tel:+919326144739" className="hover:text-primary transition-colors">+91 9326144739</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={18} className="text-primary" />
+                <a href="mailto:vip.itinfra@gmail.com" className="hover:text-primary transition-colors">vip.itinfra@gmail.com</a>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
