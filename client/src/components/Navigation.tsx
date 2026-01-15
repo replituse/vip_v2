@@ -16,12 +16,15 @@ export function Navigation() {
     { href: "#", label: "Partner", icon: Handshake },
   ];
 
+  const isHomePage = location === "/";
   const isCatalogPage = location.startsWith("/services");
 
   const variants = {
     closed: { x: "100%", opacity: 0 },
     open: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 30 } },
   };
+
+  if (isHomePage) return null;
 
   return (
     <>
