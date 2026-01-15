@@ -54,7 +54,7 @@ export default function Home() {
           className="max-w-4xl mx-auto"
         >
           {/* Logo/Title */}
-          <div className="mb-4 flex flex-col items-center">
+          <div className="mb-0 flex flex-col items-center">
             <motion.img 
               src={logoImg} 
               alt="VIP Networks Logo" 
@@ -66,16 +66,16 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-2 uppercase tracking-wider">
               VIP <span className="text-primary">NETWORKS</span>
             </h1>
-            <div className="h-[2px] w-48 bg-primary mx-auto mb-12" />
+            <div className="h-[2px] w-48 bg-primary mx-auto mb-6" />
           </div>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light tracking-wide">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed font-light tracking-wide">
             Discover Timeless Elegance and Exquisite Craftsmanship in Networking Infrastructure
           </p>
 
           {/* CTA Button */}
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-4">
             <Link href="/services">
               <button className="group px-12 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all flex items-center gap-3">
                 Explore Services
@@ -84,7 +84,7 @@ export default function Home() {
             </Link>
 
             {/* Social Icons */}
-            <div className="flex gap-6 mt-4">
+            <div className="flex gap-6 mt-2">
               <a href="https://www.instagram.com/vip_networks/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
                 <SiInstagram size={24} />
               </a>
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
 
             {/* Rating Stars */}
-            <div className="mt-8">
+            <div className="mt-4">
               <p className="text-gray-400 text-sm mb-3 uppercase tracking-widest">Rate Your Experience</p>
               <div className="flex gap-1 justify-center">
                 {[...Array(5)].map((_, i) => (
