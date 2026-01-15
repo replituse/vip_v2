@@ -83,8 +83,9 @@ export default function Partners() {
                 className="max-w-full max-h-full object-contain transition-all"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  if (!target.src.includes('ui-avatars')) {
-                    target.src = `https://ui-avatars.com/api/?name=${partner.name}&background=f8fafc&color=0f172a&bold=true&size=128`;
+                  if (!target.src.includes('google')) {
+                    const domain = partner.logo.split('/').pop();
+                    target.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
                   }
                 }}
               />
