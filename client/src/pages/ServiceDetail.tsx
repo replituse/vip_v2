@@ -60,17 +60,6 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-[#0f172a] text-foreground">
-      {/* Back Navigation */}
-      <div className="fixed top-24 left-6 z-20">
-        <button 
-          onClick={handleBack}
-          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/5"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm font-medium">Back to Services</span>
-        </button>
-      </div>
-
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Panel - Visual/Hero */}
         <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-[#1e293b] overflow-hidden flex items-center justify-center p-12">
