@@ -8,7 +8,7 @@
   --font-display: 'Montserrat', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Deep Luxury Dark Theme */
+  /* Deep Luxury Blue Theme */
   --background: 222 47% 11%;     /* #0f172a - Slate 900 */
   --foreground: 210 40% 98%;     /* #f8fafc - Slate 50 */
   
@@ -18,8 +18,8 @@
   --popover: 222 47% 11%;
   --popover-foreground: 210 40% 98%;
   
-  --primary: 45 93% 47%;        /* #e8b30e - Gold/Amber for Reliability/Luxury */
-  --primary-foreground: 222 47% 11%;
+  --primary: 210 100% 50%;      /* Azure Blue for Technology/Professionalism */
+  --primary-foreground: 210 40% 98%;
   
   --secondary: 217 33% 17%;     /* #1e293b - Slate 800 */
   --secondary-foreground: 210 40% 98%;
@@ -27,8 +27,8 @@
   --muted: 217 33% 25%;
   --muted-foreground: 215 20% 65%;
   
-  --accent: 45 93% 47%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 210 100% 50%;
+  --accent-foreground: 210 40% 98%;
   
   --destructive: 0 62% 30%;
   --destructive-foreground: 210 40% 98%;

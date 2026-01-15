@@ -11,7 +11,7 @@ export default function ServiceDetail() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-[#0f172a]">
         <Loader2 className="w-10 h-10 text-primary animate-spin" />
       </div>
     );
@@ -19,7 +19,7 @@ export default function ServiceDetail() {
 
   if (error || !service) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background gap-4">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#0f172a] gap-4">
         <AlertCircle className="w-12 h-12 text-destructive" />
         <h2 className="text-xl font-bold text-white">Service Not Found</h2>
         <Link href="/services" className="text-primary hover:underline">Return to Catalogue</Link>
@@ -28,11 +28,11 @@ export default function ServiceDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#0f172a] text-foreground">
       {/* Back Navigation */}
       <div className="fixed top-24 left-6 z-20">
         <Link href="/services">
-          <button className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/5">
+          <button className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/5">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm font-medium">Back to Services</span>
           </button>
@@ -41,9 +41,9 @@ export default function ServiceDetail() {
 
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Panel - Visual/Hero */}
-        <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-secondary overflow-hidden flex items-center justify-center p-12">
+        <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen bg-[#1e293b] overflow-hidden flex items-center justify-center p-12">
           {/* Decorative Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-secondary to-secondary opacity-50" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-[#1e293b] to-[#1e293b] opacity-50" />
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "30px 30px" }}></div>
           
           <motion.div 
@@ -52,14 +52,14 @@ export default function ServiceDetail() {
             transition={{ duration: 0.6 }}
             className="relative z-10"
           >
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl bg-background/50 backdrop-blur-xl border border-white/10 flex items-center justify-center shadow-2xl shadow-black/50">
-              <ServiceIcon iconName={service.icon} className="w-24 h-24 md:w-32 md:h-32 text-primary drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]" />
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl bg-[#0f172a]/50 backdrop-blur-xl border border-white/10 flex items-center justify-center shadow-2xl shadow-black/50">
+              <ServiceIcon iconName={service.icon} className="w-24 h-24 md:w-32 md:h-32 text-primary drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
             </div>
           </motion.div>
         </div>
 
         {/* Right Panel - Content */}
-        <div className="lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center">
+        <div className="lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center bg-[#0f172a]">
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -73,7 +73,7 @@ export default function ServiceDetail() {
               {service.title}
             </h1>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-12 border-l-2 border-primary/30 pl-6">
+            <p className="text-lg text-gray-400 leading-relaxed mb-12 border-l-2 border-primary/30 pl-6">
               {service.description}
             </p>
 

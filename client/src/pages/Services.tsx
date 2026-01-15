@@ -53,11 +53,9 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-16 md:mb-24 text-center"
         >
-          <h2 className="text-primary font-bold tracking-widest uppercase mb-4 text-sm">Our Expertise</h2>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6 uppercase">
-            VIP <span className="text-primary">NETWORKS</span>
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6 uppercase inline-block border-b-2 border-primary pb-2">
+            Our Services
           </h1>
-          <div className="h-1 w-24 bg-primary rounded-full mx-auto" />
         </motion.div>
 
         {/* Grid */}
