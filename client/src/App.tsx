@@ -10,6 +10,7 @@ import Home from "@/pages/Home";
 import Services from "@/pages/Services";
 import ServiceDetail from "@/pages/ServiceDetail";
 import Contact from "@/pages/Contact";
+import Partners from "@/pages/Partners";
 import NotFound from "@/pages/not-found";
 
 // Scroll to top on route change
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/services/:id" component={ServiceDetail} />
       <Route path="/contact" component={Contact} />
+      <Route path="/partners" component={Partners} />
       <Route component={NotFound} />
     </Switch>
   );

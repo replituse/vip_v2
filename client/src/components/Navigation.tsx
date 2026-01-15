@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Mail, Phone, MapPin, ArrowLeft, Gem, UserCheck, Handshake } from "lucide-react";
+import { Menu, X, Mail, Phone, MapPin, ArrowLeft, Gem, UserCheck, Handshake, Instagram, Youtube, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useServices } from "@/hooks/use-services";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const { data: services } = useServices();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -13,7 +15,7 @@ export function Navigation() {
     { href: "/", label: "Home", icon: Gem },
     { href: "/services", label: "Our Services", icon: UserCheck },
     { href: "/contact", label: "Contact Us", icon: Mail },
-    { href: "#", label: "Partner", icon: Handshake },
+    { href: "/partners", label: "Partner", icon: Handshake },
   ];
 
   const isHomePage = location === "/";
@@ -38,7 +40,7 @@ export function Navigation() {
         </div>
 
         <Link href="/" className="pointer-events-auto">
-          <div className="flex flex-col px-4 py-2">
+          <div className="flex flex-col px-4 py-2 text-center">
             <span className="text-xl md:text-2xl font-display font-bold text-white tracking-wide uppercase">
               VIP <span className="text-primary">NETWORKS</span>
             </span>
@@ -55,7 +57,6 @@ export function Navigation() {
         </div>
       </header>
 
-      {/* Full Screen Drawer */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -64,7 +65,7 @@ export function Navigation() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={toggleMenu}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
             />
             
             <motion.div
@@ -72,10 +73,10 @@ export function Navigation() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed top-0 right-0 bottom-0 w-full md:w-[400px] bg-white z-[70] p-8 flex flex-col shadow-2xl rounded-l-3xl"
+              className="fixed top-0 right-0 bottom-0 w-full md:w-[400px] bg-white z-[70] p-8 flex flex-col shadow-2xl rounded-l-3xl overflow-y-auto"
             >
               <div className="flex justify-between items-center mb-12">
-                <span className="text-2xl font-display font-bold text-primary uppercase">Menu</span>
+                <span className="text-2xl font-display font-bold text-[#3b82f6] uppercase">Menu</span>
                 <button 
                   onClick={toggleMenu}
                   className="p-2 bg-gray-50 rounded-full text-gray-400 hover:text-primary transition-colors"
@@ -91,7 +92,7 @@ export function Navigation() {
                     <Link 
                       key={item.label} 
                       href={item.href} 
-                      className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${location === item.href ? 'bg-primary/10 text-primary' : 'hover:bg-gray-50 text-gray-700'}`}
+                      className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${location === item.href ? 'bg-[#3b82f6]/10 text-[#3b82f6]' : 'hover:bg-gray-50 text-gray-700'}`}
                       onClick={() => setIsOpen(false)}
                     >
                       <item.icon className="w-5 h-5" />
@@ -101,23 +102,56 @@ export function Navigation() {
                 </nav>
               </div>
 
+              {services && services.length > 0 && (
+                <div className="mb-8">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 px-4">Our Services</p>
+                  <div className="flex flex-col space-y-1">
+                    {services.map((service) => (
+                      <Link 
+                        key={service.id} 
+                        href={`/services/${service.id}`}
+                        className="text-sm text-gray-600 hover:text-[#3b82f6] hover:bg-gray-50 p-3 rounded-xl transition-all font-medium uppercase tracking-tighter"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="flex-grow" />
 
               <div className="space-y-6 pt-8 border-t border-gray-100">
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Shop Information</p>
                 <div className="flex items-start gap-3 text-gray-500">
-                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
+                  <MapPin className="w-5 h-5 text-[#3b82f6] shrink-0 mt-1" />
                   <p className="text-sm">Jogeshwari East, Mumbai - 400060, Maharashtra, India</p>
                 </div>
                 
                 <div className="flex items-center gap-3 text-gray-500">
-                  <Phone className="w-5 h-5 text-primary shrink-0" />
-                  <a href="tel:+919326144739" className="text-sm hover:text-primary">+91 9326144739</a>
+                  <Phone className="w-5 h-5 text-[#3b82f6] shrink-0" />
+                  <a href="tel:+919326144739" className="text-sm hover:text-[#3b82f6] transition-colors">+91 9326144739</a>
                 </div>
 
                 <div className="flex items-center gap-3 text-gray-500">
-                  <Mail className="w-5 h-5 text-primary shrink-0" />
-                  <a href="mailto:vip.itinfra@gmail.com" className="text-sm hover:text-primary">vip.itinfra@gmail.com</a>
+                  <Mail className="w-5 h-5 text-[#3b82f6] shrink-0" />
+                  <a href="mailto:vip.itinfra@gmail.com" className="text-sm hover:text-[#3b82f6] transition-colors">vip.itinfra@gmail.com</a>
+                </div>
+
+                <div className="pt-6">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Connect With Us</p>
+                  <div className="flex gap-4">
+                    <a href="https://www.instagram.com/vip_networks/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+                      <Instagram size={20} />
+                    </a>
+                    <a href="https://wa.me/919326144739" target="_blank" rel="noopener noreferrer" className="p-3 bg-green-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+                      <MessageCircle size={20} />
+                    </a>
+                    <a href="https://youtube.com/@vipnetworks" target="_blank" rel="noopener noreferrer" className="p-3 bg-red-600 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+                      <Youtube size={20} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
