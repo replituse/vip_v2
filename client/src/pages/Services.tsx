@@ -24,10 +24,10 @@ export default function Services() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="flex flex-col items-center gap-4">
           <Loader2 className="w-10 h-10 text-primary animate-spin" />
-          <p className="text-muted-foreground font-display tracking-widest uppercase text-sm">Loading Catalogue...</p>
+          <p className="text-gray-400 font-display tracking-widest uppercase text-sm">Loading Catalogue...</p>
         </div>
       </div>
     );
@@ -35,30 +35,29 @@ export default function Services() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-6">
+      <div className="min-h-screen flex items-center justify-center bg-white p-6">
         <div className="max-w-md text-center">
-          <h2 className="text-2xl font-bold text-destructive mb-2">Unavailable</h2>
-          <p className="text-muted-foreground">Unable to load services at this time. Please try again later.</p>
+          <h2 className="text-2xl font-bold text-red-600 mb-2">Unavailable</h2>
+          <p className="text-gray-500">Unable to load services at this time. Please try again later.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background py-24 px-6 md:px-12">
+    <div className="min-h-screen bg-white py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-16 md:mb-24"
+          className="mb-16 md:mb-24 text-center"
         >
           <h2 className="text-primary font-bold tracking-widest uppercase mb-4 text-sm">Our Expertise</h2>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
-            Comprehensive <br/>
-            <span className="text-muted-foreground">Infrastructure Solutions</span>
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6 uppercase">
+            VIP <span className="text-primary">NETWORKS</span>
           </h1>
-          <div className="h-1 w-24 bg-primary rounded-full" />
+          <div className="h-1 w-24 bg-primary rounded-full mx-auto" />
         </motion.div>
 
         {/* Grid */}
@@ -72,26 +71,23 @@ export default function Services() {
             <Link key={service.id} href={`/services/${service.id}`}>
               <motion.div 
                 variants={item}
-                className="group relative h-full bg-card border border-white/5 rounded-3xl p-8 hover:border-primary/50 transition-colors duration-300 cursor-pointer overflow-hidden"
+                className="group relative h-full bg-white border border-gray-100 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden flex flex-col items-center text-center"
               >
-                {/* Hover Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10 flex flex-col h-full">
+                <div className="relative z-10 flex flex-col items-center h-full">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 text-primary border border-white/5">
-                    <ServiceIcon iconName={service.icon} className="w-7 h-7" />
+                  <div className="w-24 h-24 rounded-full bg-gray-50 flex items-center justify-center mb-6 border border-gray-100 group-hover:bg-primary/5 transition-colors">
+                    <ServiceIcon iconName={service.icon} className="w-12 h-12 text-primary" />
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-display font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors uppercase">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
                     {service.description}
                   </p>
                   
-                  <div className="mt-auto flex items-center gap-2 text-sm font-bold text-white group-hover:text-primary transition-colors">
+                  <div className="mt-auto flex items-center gap-2 text-sm font-bold text-primary">
                     View Details
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>
