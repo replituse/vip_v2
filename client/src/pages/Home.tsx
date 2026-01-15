@@ -53,13 +53,11 @@ export default function Home() {
         >
           {/* Logo/Title */}
           <div className="mb-4">
-            <div className="h-[2px] w-24 bg-primary mx-auto mb-12" />
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-2 uppercase tracking-wider">
+              VIP <span className="text-primary">NETWORKS</span>
+            </h1>
+            <div className="h-[2px] w-48 bg-primary mx-auto mb-12" />
           </div>
-
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-6 uppercase tracking-wider">
-            VIP <span className="text-primary">NETWORKS</span>
-          </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light tracking-wide">
