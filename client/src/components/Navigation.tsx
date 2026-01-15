@@ -26,6 +26,14 @@ export function Navigation() {
     open: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 30 } },
   };
 
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      setLocation("/");
+    }
+  };
+
   if (isHomePage) return null;
 
   return (
@@ -33,9 +41,12 @@ export function Navigation() {
       <header className="fixed top-0 left-0 right-0 z-50 p-4 flex items-center justify-between bg-[#0f172a]/80 backdrop-blur-md border-b border-white/5 shadow-sm">
         <div className="w-10">
           {isCatalogPage && (
-            <Link href="/" className="p-2 flex items-center justify-center hover:scale-110 transition-transform pointer-events-auto">
-              <ArrowLeft className="w-5 h-5 text-white" />
-            </Link>
+            <button 
+              onClick={handleBack}
+              className="p-2 flex items-center justify-center hover:scale-110 transition-transform pointer-events-auto text-white"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
           )}
         </div>
 
@@ -101,24 +112,6 @@ export function Navigation() {
                   ))}
                 </nav>
               </div>
-
-              {services && services.length > 0 && (
-                <div className="mb-8">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 px-4">Our Services</p>
-                  <div className="flex flex-col space-y-1">
-                    {services.map((service) => (
-                      <Link 
-                        key={service.id} 
-                        href={`/services/${service.id}`}
-                        className="text-sm text-gray-600 hover:text-[#3b82f6] hover:bg-gray-50 p-3 rounded-xl transition-all font-medium uppercase tracking-tighter"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               <div className="flex-grow" />
 
