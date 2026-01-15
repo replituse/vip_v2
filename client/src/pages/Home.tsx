@@ -53,15 +53,12 @@ export default function Home() {
         >
           {/* Logo/Title */}
           <div className="mb-4">
-            <h2 className="text-primary text-2xl md:text-3xl font-display font-bold tracking-[0.2em] uppercase mb-2">
-              VIP NETWORKS
-            </h2>
             <div className="h-[2px] w-24 bg-primary mx-auto mb-12" />
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-6">
-            Jewellery <span className="italic text-primary">Catalog</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-tight mb-6 uppercase tracking-wider">
+            VIP <span className="text-primary">NETWORKS</span>
           </h1>
 
           {/* Subheadline */}
@@ -80,13 +77,13 @@ export default function Home() {
 
             {/* Social Icons */}
             <div className="flex gap-6 mt-4">
-              <a href="#" className="p-3 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+              <a href="https://www.instagram.com/vip_networks/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="p-3 bg-green-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+              <a href="https://wa.me/919326144739" target="_blank" rel="noopener noreferrer" className="p-3 bg-green-500 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
                 <MessageCircle size={24} />
               </a>
-              <a href="#" className="p-3 bg-red-600 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
+              <a href="https://youtube.com/@vipnetworks" target="_blank" rel="noopener noreferrer" className="p-3 bg-red-600 rounded-full text-white hover:scale-110 transition-transform shadow-lg">
                 <Youtube size={24} />
               </a>
             </div>
@@ -96,7 +93,15 @@ export default function Home() {
               <p className="text-gray-400 text-sm mb-3 uppercase tracking-widest">Rate Your Experience</p>
               <div className="flex gap-1 justify-center">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={24} className="text-primary fill-primary" />
+                  <a 
+                    key={i} 
+                    href="https://g.page/r/your-google-review-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:scale-110 transition-transform cursor-pointer"
+                  >
+                    <Star size={24} className="text-primary fill-primary" />
+                  </a>
                 ))}
               </div>
               <p className="text-gray-500 text-xs mt-3">Click to leave a Google review</p>

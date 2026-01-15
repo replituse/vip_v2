@@ -22,9 +22,9 @@ export function Navigation() {
 
   return (
     <>
-      {/* Floating Header */}
+      {/* Navigation hidden per user request to remove top left logo and hamburger */}
+      {/* 
       <header className="fixed top-0 left-0 right-0 z-50 p-4 flex justify-between items-center pointer-events-none">
-        {/* Logo Area */}
         <Link href="/" className="pointer-events-auto">
           <div className="flex flex-col bg-background/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-lg">
             <span className="text-xl font-display font-bold text-white tracking-wide">
@@ -33,7 +33,6 @@ export function Navigation() {
           </div>
         </Link>
 
-        {/* Hamburger Trigger */}
         <button 
           onClick={toggleMenu}
           className="pointer-events-auto p-3 bg-primary text-primary-foreground rounded-full shadow-lg shadow-primary/20 hover:scale-110 active:scale-95 transition-transform"
@@ -41,6 +40,7 @@ export function Navigation() {
           <Menu className="w-6 h-6" />
         </button>
       </header>
+      */}
 
       {/* Full Screen Drawer */}
       <AnimatePresence>
